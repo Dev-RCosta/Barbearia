@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | Empire Man</title>
+    <link rel="icon" type="image/png" href="assets/logo-empire-man-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <main class="admin-shell">
+        <header class="admin-header">
+            <a class="admin-brand" href="index.html">
+                <img src="assets/logo-empire-man-header.png" alt="Empire Man Barbearia">
+            </a>
+            <div>
+                <p class="eyebrow">EMPIRE MAN</p>
+                <h1>PAINEL ADMINISTRATIVO</h1>
+                <p class="subtitle">Agenda &amp; Reservas</p>
+            </div>
+        </header>
+
+        <section class="panel-section" aria-labelledby="barbeiros-title">
+            <div class="section-heading">
+                <p class="eyebrow">EQUIPE</p>
+                <h2 id="barbeiros-title">Escolha uma agenda</h2>
+            </div>
+            <div class="barber-cards">
+                <article class="barber-card">
+                    <span class="barber-initial">J</span>
+                    <div>
+                        <h3>JHONNE</h3>
+                        <p>Agenda do barbeiro</p>
+                    </div>
+                    <a class="button button-primary" href="barbeiro.html?profissional=Rodrigo">VER AGENDA</a>
+                </article>
+                <article class="barber-card">
+                    <span class="barber-initial">P</span>
+                    <div>
+                        <h3>PEDRO</h3>
+                        <p>Agenda do barbeiro</p>
+                    </div>
+                    <a class="button button-primary" href="barbeiro.html?profissional=Melqui">VER AGENDA</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel-section today-section" aria-labelledby="today-title">
+            <div class="section-heading section-heading-row">
+                <div>
+                    <p class="eyebrow">VISÃO RÁPIDA</p>
+                    <h2 id="today-title">RESERVAS DE HOJE</h2>
+                </div>
+                <span id="todayLabel" class="date-label"></span>
+            </div>
+            <div id="todayReservations" class="reservation-list" aria-live="polite">
+                <p class="loading-state">Carregando reservas...</p>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda | Empire Man</title>
+    <link rel="icon" type="image/png" href="assets/logo-empire-man-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <main class="admin-shell barber-shell">
+        <header class="admin-header compact-header">
+            <a class="admin-brand" href="admin.html">
+                <img src="assets/logo-empire-man-header.png" alt="Empire Man Barbearia">
+            </a>
+            <div>
+                <p class="eyebrow">AGENDA EMPIRE MAN</p>
+                <h1 id="barberTitle">AGENDA</h1>
+                <p id="barberSubtitle" class="subtitle">Reservas do dia</p>
+            </div>
+        </header>
+
+        <section class="agenda-toolbar" aria-label="Filtros da agenda">
+            <div class="date-tabs">
+                <button type="button" class="date-tab active" data-date-offset="0">Hoje</button>
+                <button type="button" class="date-tab" data-date-offset="1">Amanhã</button>
+                <label class="date-picker-label">Escolher data
+                    <input id="agendaDate" type="date">
+                </label>
+            </div>
+            <button id="newReservationButton" class="button button-primary" type="button">+ NOVA RESERVA</button>
+        </section>
+
+        <section class="agenda-section" aria-labelledby="agenda-title">
+            <div class="section-heading section-heading-row">
+                <div>
+                    <p class="eyebrow">HORÁRIOS</p>
+                    <h2 id="agenda-title">AGENDA DO DIA</h2>
+                </div>
+                <span id="agendaDateLabel" class="date-label"></span>
+            </div>
+            <div id="scheduleList" class="schedule-list" aria-live="polite">
+                <p class="loading-state">Carregando agenda...</p>
+            </div>
+        </section>
+        <p id="adminMessage" class="admin-message" role="status"></p>
+    </main>
+
+    <div id="reservationModal" class="admin-modal" aria-hidden="true">
+        <div class="admin-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" data-close-modal aria-label="Fechar">&times;</button>
+            <p class="eyebrow" id="modalEyebrow">RESERVA</p>
+            <h2 id="modalTitle">Detalhes da reserva</h2>
+            <div id="reservationDetails" class="reservation-details"></div>
+            <form id="reservationForm" class="reservation-form" hidden>
+                <label>Nome<input id="formClientName" name="clienteNome" required></label>
+                <label>Telefone<input id="formPhone" name="telefone" type="tel"></label>
+                <label>Serviço<select id="formService" name="servicoNome" required></select></label>
+                <div class="form-grid">
+                    <label>Data<input id="formDate" name="dataISO" type="date" required></label>
+                    <label>Hora<select id="formTime" name="hora" required></select></label>
+                </div>
+                <div class="modal-actions">
+                    <button class="button button-primary" type="submit">SALVAR ALTERAÇÕES</button>
+                    <button class="button button-secondary" type="button" data-close-modal>FECHAR</button>
+                </div>
+            </form>
+            <div id="viewActions" class="modal-actions">
+                <button id="editReservationButton" class="button button-primary" type="button">EDITAR</button>
+                <button id="cancelReservationButton" class="button button-danger" type="button">CANCELAR</button>
+                <button class="button button-secondary" type="button" data-close-modal>FECHAR</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
